@@ -1,0 +1,89 @@
+{
+  "parser": "babel-eslint",
+  "extends": ['airbnb', 'prettier', 'prettier/react'],
+  "plugins": ['prettier', 'redux-saga', 'react', 'react-hooks', 'jsx-a11y'],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+  },
+  "globals": {
+    "API_URL": true,
+    "APP_URL": true,
+    "NODE_ENV": true,
+    "APP_DOMAIN": true,
+    "APP_PLATFORM_URL": true,
+    "APP_TALK_URL": true,
+    "APP_BOT_URL": true,
+    "API_CHAT_URL": true,
+    "API_PLATFORM_URL": true,
+    "SSR": true,
+    "SSR_PORT": true,
+    "sessionStorage": true,
+    "APP_CHAT_URL": true,
+    "PUSHER_APP_KEY": true,
+    "PORT": true,
+    "window": true,
+    "document": true,
+    "describe": true,
+    "test": true,
+    "expect": true,
+    "it": true,
+    "navigator": true,
+    "$": true,
+  },
+  "rules": {
+    "no-useless-constructor": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": 0,
+    "react/static-property-placement": ["warn", "static public field"],
+    "react/prefer-stateless-function": [0, {"ignorePureComponents": true}],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "react/jsx-no-target-blank": 0,
+    "prettier/prettier": ["error", {
+      "printWidth": 80,
+      "tabWidth": 2,
+      "useTabs": false,
+      "semi": true,
+      "singleQuote": true,
+      "trailingComma": "all"
+    }],
+    "camelcase": 0,
+    "class-methods-use-this": 0,
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["i18n", "assets", "components", "containers", "api", "styles", "pages", "modals", "utils", "reducers", "configs", "actions", "middlewares"]
+      }
+    ],
+    "max-lines": [2, {  // specify the max number of lines in a file
+      max: 300,
+      skipBlankLines: true,
+      skipComments: true
+    }],
+    "max-lines-per-function": [2, {  // enforce a maximum function length
+      max: 300,
+      skipBlankLines: true,
+      skipComments: true,
+      IIFEs: true,
+    }],
+    "max-params": [2, 3],  // limits the number of parameters that can be used in the function declaration.
+    "max-depth": [2, 4],  // specify the maximum depth that blocks can be nested
+    "max-statements": [2, 20],  // specify the maximum number of statement allowed in a function
+    "max-statements-per-line": [2, { max: 1 }],  // restrict the number of statements per line,
+    "import/no-extraneous-dependencies": ["error", {"peerDependencies": true}],
+    "quote-props": [0, "always"]
+  }
+}
